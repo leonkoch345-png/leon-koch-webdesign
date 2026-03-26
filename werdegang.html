@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Werdegang von Leon Koch – Webdesigner aus Böblingen. Schulausbildung, Studium und Weg ins Webdesign.">
+  <title>Werdegang – Leon Koch Webdesign</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Timeline-Erweiterungen für zwei Spalten (Bildung + Webdesign) */
+    .timeline-cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--sp-16);
+      align-items: start;
+    }
+    .timeline-col__title {
+      font-size: var(--fs-sm);
+      font-weight: var(--fw-semibold);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--clr-text-muted);
+      margin-bottom: var(--sp-8);
+      display: flex;
+      align-items: center;
+      gap: var(--sp-3);
+    }
+    .timeline-col__title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--clr-border);
+    }
+
+    .competency-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: var(--sp-5);
+      margin-top: var(--sp-8);
+    }
+    .competency-item {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--sp-4);
+      padding: var(--sp-5) var(--sp-6);
+      background: var(--clr-white);
+      border: 1px solid var(--clr-border);
+      border-radius: var(--radius-lg);
+      transition: box-shadow var(--tr), border-color var(--tr);
+    }
+    .competency-item:hover {
+      box-shadow: var(--shadow);
+      border-color: var(--clr-accent-border);
+    }
+    .competency-item__icon {
+      width: 40px; height: 40px;
+      background: var(--clr-accent-light);
+      color: var(--clr-accent);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .competency-item__icon svg { width: 18px; height: 18px; }
+    .competency-item__title {
+      font-size: var(--fs-base);
+      font-weight: var(--fw-semibold);
+      color: var(--clr-text);
+      margin-bottom: 2px;
+    }
+    .competency-item__desc {
+      font-size: var(--fs-sm);
+      color: var(--clr-text-muted);
+      line-height: var(--lh-relaxed);
+    }
+
+    @media (max-width: 768px) {
+      .timeline-cols {
+        grid-template-columns: 1fr;
+        gap: var(--sp-12);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <a href="#main" class="skip-link">Zum Inhalt springen</a>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="index.html" class="header__logo" aria-label="Leon Koch Webdesign – Startseite">
+        Leon Koch <span>Webdesign</span>
+      </a>
+
+      <input type="checkbox" id="nav-toggle" class="nav-toggle sr-only">
+      <label for="nav-toggle" class="nav-toggle-label" aria-label="Navigation öffnen oder schließen">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+
+      <nav class="nav" aria-label="Hauptnavigation">
+        <ul class="nav__list">
+          <li><a href="index.html"       class="nav__link">Start</a></li>
+          <li><a href="leistungen.html"  class="nav__link">Leistungen</a></li>
+          <li><a href="ueber-mich.html"  class="nav__link">Über mich</a></li>
+          <li><a href="werdegang.html"   class="nav__link active">Werdegang</a></li>
+          <li><a href="kontakt.html"     class="nav__link nav__link--cta">Projekt anfragen</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ===== PAGE HERO ===== -->
+    <section class="page-hero">
+      <div class="container">
+        <nav class="page-hero__breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Start</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">Werdegang</span>
+        </nav>
+        <h1 class="page-hero__title">Werdegang</h1>
+        <p class="page-hero__subtitle">
+          Ausbildung, Studium und ein kontinuierlicher Weg ins Webdesign –
+          hier finden Sie einen Überblick über meinen bisherigen Werdegang.
+        </p>
+      </div>
+    </section>
+
+
+    <!-- ===== TIMELINE ===== -->
+    <section class="section" aria-label="Bildungsweg">
+      <div class="container">
+        <div class="timeline-cols">
+
+          <!-- Linke Spalte: Bildungsweg -->
+          <div>
+            <p class="timeline-col__title">Bildungsweg</p>
+            <ol class="timeline" aria-label="Chronologischer Bildungsweg">
+
+              <li class="timeline__item">
+                <p class="timeline__period">09/2012 – 07/2016</p>
+                <h2 class="timeline__title">Grundschule Königsknoll</h2>
+                <p class="timeline__location">Sindelfingen</p>
+                <p class="timeline__desc">
+                  Grundschulausbildung mit dem Abschluss der Grundschulempfehlung
+                  für das Gymnasium.
+                </p>
+              </li>
+
+              <li class="timeline__item">
+                <p class="timeline__period">09/2016 – 07/2024</p>
+                <h2 class="timeline__title">Stiftsgymnasium Sindelfingen</h2>
+                <p class="timeline__location">Sindelfingen</p>
+                <p class="timeline__desc">
+                  Allgemeine Hochschulreife (Abitur) am Stiftsgymnasium Sindelfingen.
+                  Schwerpunkte in den Bereichen Mathematik und Naturwissenschaften.
+                  Die schulische Ausbildung legte das analytische Fundament,
+                  das meine strukturierte Arbeitsweise bis heute prägt.
+                </p>
+              </li>
+
+              <li class="timeline__item timeline__item--active">
+                <p class="timeline__period">10/2024 – heute</p>
+                <h2 class="timeline__title">Duales Studium – Bachelor of Engineering</h2>
+                <p class="timeline__location">Elektrotechnik</p>
+                <p class="timeline__desc">
+                  Kombination aus theoretischer Ausbildung an der Hochschule und
+                  praktischer Anwendung im Unternehmen. Das Studium schärft technisches
+                  Verständnis, präzises Denken und die Fähigkeit, komplexe Sachverhalte
+                  strukturiert zu lösen – Kompetenzen, die ich direkt in meine Arbeit
+                  als Webdesigner einfließen lasse.
+                </p>
+                <span class="timeline__tag">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle></svg>
+                  Aktuell
+                </span>
+              </li>
+
+            </ol>
+          </div>
+
+          <!-- Rechte Spalte: Webdesign-Weg -->
+          <div>
+            <p class="timeline-col__title">Webdesign-Weg</p>
+            <ol class="timeline" aria-label="Chronologischer Webdesign-Weg">
+
+              <li class="timeline__item">
+                <p class="timeline__period">Ab 2018 (Alter 14)</p>
+                <h2 class="timeline__title">Einstieg ins Webdesign</h2>
+                <p class="timeline__location">Eigenständig</p>
+                <p class="timeline__desc">
+                  Erste eigenständige Beschäftigung mit Webdesign über Baukastensysteme
+                  wie Wix und Weebly. Entwicklung eines Verständnisses für Layouts,
+                  Farbgestaltung und Nutzerführung durch eigene Experimente und Projekte.
+                </p>
+              </li>
+
+              <li class="timeline__item">
+                <p class="timeline__period">2019 – 2022</p>
+                <h2 class="timeline__title">Eigene Projekte & Online-Shops</h2>
+                <p class="timeline__location">Shopify & weitere Plattformen</p>
+                <p class="timeline__desc">
+                  Aufbau eigener Online-Shops und digitaler Projekte auf Shopify und
+                  weiteren Plattformen. Praxiserfahrung in den Bereichen E-Commerce,
+                  Conversion-Optimierung und nutzerzentriertes Design.
+                </p>
+              </li>
+
+              <li class="timeline__item">
+                <p class="timeline__period">2022 – 2024</p>
+                <h2 class="timeline__title">Fokus auf individuelle Website-Konzepte</h2>
+                <p class="timeline__location">Eigenständig</p>
+                <p class="timeline__desc">
+                  Weiterentwicklung vom reinen Baukasten-Nutzer hin zur eigenständigen
+                  Konzeption und Gestaltung von Websites. Vertiefung des Verständnisses
+                  für Nutzerführung, visuelles Design und die Wirkung von Websites
+                  auf verschiedene Zielgruppen.
+                </p>
+              </li>
+
+              <li class="timeline__item timeline__item--active">
+                <p class="timeline__period">2024 – heute</p>
+                <h2 class="timeline__title">Leon Koch Webdesign</h2>
+                <p class="timeline__location">Böblingen, Baden-Württemberg</p>
+                <p class="timeline__desc">
+                  Professionelle Webdesign-Dienstleistungen für lokale Unternehmen.
+                  Verbindung aus gestalterischer Erfahrung und technischem Verständnis
+                  aus dem dualen Studium.
+                </p>
+                <span class="timeline__tag">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle></svg>
+                  Aktuell
+                </span>
+              </li>
+
+            </ol>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ===== KOMPETENZEN ===== -->
+    <section class="section section--alt" aria-label="Kompetenzen">
+      <div class="container">
+        <span class="section-label">Was mich ausmacht</span>
+        <h2 class="section-title">Kompetenzen, die den Unterschied machen</h2>
+        <p class="section-subtitle">
+          Die Verbindung aus technischem Studium und langjähriger Webdesign-Erfahrung
+          schafft eine ungewöhnliche, aber wertvolle Kombination.
+        </p>
+
+        <div class="competency-grid">
+
+          <div class="competency-item">
+            <div class="competency-item__icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+            </div>
+            <div>
+              <p class="competency-item__title">Analytisches Denken</p>
+              <p class="competency-item__desc">Das Studium der Elektrotechnik schärft die Fähigkeit, Probleme strukturiert zu analysieren und präzise Lösungen zu entwickeln.</p>
+            </div>
+          </div>
+
+          <div class="competency-item">
+            <div class="competency-item__icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+            </div>
+            <div>
+              <p class="competency-item__title">Erfahrung mit digitalen Projekten</p>
+              <p class="competency-item__desc">Über 10 Jahre eigenständige Beschäftigung mit Webauftritten, Online-Shops und digitalen Projekten – von der ersten Idee bis zur fertigen Seite.</p>
+            </div>
+          </div>
+
+          <div class="competency-item">
+            <div class="competency-item__icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+            </div>
+            <div>
+              <p class="competency-item__title">Nutzerzentriertes Denken</p>
+              <p class="competency-item__desc">Websites werden nicht für den Designer gemacht, sondern für die Nutzer. Dieser Grundsatz prägt jede gestalterische Entscheidung.</p>
+            </div>
+          </div>
+
+          <div class="competency-item">
+            <div class="competency-item__icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+            </div>
+            <div>
+              <p class="competency-item__title">Strukturiertes Vorgehen</p>
+              <p class="competency-item__desc">Von der Anforderungsanalyse über das Konzept bis zur Übergabe – jedes Projekt wird klar und transparent strukturiert abgewickelt.</p>
+            </div>
+          </div>
+
+          <div class="competency-item">
+            <div class="competency-item__icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.07 4.93a10 10 0 0 1 1.41 14.14M4.93 4.93a10 10 0 0 0 0 14.14"></path></svg>
+            </div>
+            <div>
+              <p class="competency-item__title">Kontinuierliche Weiterentwicklung</p>
+              <p class="competency-item__desc">Webdesign entwickelt sich ständig weiter – ich auch. Neue Technologien und Designansätze werden fortlaufend in die Arbeit integriert.</p>
+            </div>
+          </div>
+
+          <div class="competency-item">
+            <div class="competency-item__icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+            </div>
+            <div>
+              <p class="competency-item__title">Direkte Kommunikation</p>
+              <p class="competency-item__desc">Klare Absprachen, keine langen Kommunikationsketten. Sie arbeiten direkt mit mir, ohne Umwege über ein Projektmanagement-Team.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ===== CTA ===== -->
+    <section class="cta-section" aria-label="Projekt anfragen">
+      <div class="container cta-section__inner">
+        <h2>Bereit für die Zusammenarbeit?</h2>
+        <p>Überzeugen Sie sich selbst – anfragen kostet nichts.</p>
+        <a href="kontakt.html" class="btn btn--white btn--lg">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+          Jetzt anfragen
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" aria-label="Seitenfu&szlig;">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <h3>Leon Koch <span>Webdesign</span></h3>
+          <p>Professionelle Websites für lokale Unternehmen. Aus Böblingen, für die Region.</p>
+        </div>
+        <div>
+          <p class="footer__col-title">Navigation</p>
+          <ul class="footer__links">
+            <li><a href="index.html"      class="footer__link">Startseite</a></li>
+            <li><a href="leistungen.html" class="footer__link">Leistungen</a></li>
+            <li><a href="ueber-mich.html" class="footer__link">Über mich</a></li>
+            <li><a href="werdegang.html"  class="footer__link">Werdegang</a></li>
+            <li><a href="kontakt.html"    class="footer__link">Kontakt</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__col-title">Kontakt</p>
+          <ul class="footer__links">
+            <li><a href="mailto:kontakt@leonkoch.de" class="footer__link">kontakt@leonkoch.de</a></li>
+            <li><a href="tel:+4915123456789"         class="footer__link">0151 23456789</a></li>
+            <li><span class="footer__link">Böblingen, Baden-Württemberg</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">&copy; 2025 Leon Koch Webdesign. Alle Rechte vorbehalten.</p>
+        <nav class="footer__legal" aria-label="Rechtliches">
+          <a href="#">Impressum</a>
+          <a href="#">Datenschutz</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

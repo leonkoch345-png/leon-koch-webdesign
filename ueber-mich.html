@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Über Leon Koch – Webdesigner aus Böblingen. Erfahren Sie mehr über meinen Weg ins Webdesign und meine Arbeitsweise.">
+  <title>Über mich – Leon Koch Webdesign</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: var(--sp-4);
+      margin-top: var(--sp-8);
+    }
+    .skill-item {
+      background: var(--clr-white);
+      border: 1px solid var(--clr-border);
+      border-radius: var(--radius-lg);
+      padding: var(--sp-5) var(--sp-6);
+      display: flex;
+      align-items: center;
+      gap: var(--sp-4);
+      transition: box-shadow var(--tr), border-color var(--tr);
+    }
+    .skill-item:hover {
+      box-shadow: var(--shadow);
+      border-color: var(--clr-accent-border);
+    }
+    .skill-item__dot {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: var(--clr-accent);
+      flex-shrink: 0;
+    }
+    .skill-item__name {
+      font-size: var(--fs-sm);
+      font-weight: var(--fw-semibold);
+      color: var(--clr-text);
+    }
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: var(--sp-6);
+      margin-top: var(--sp-8);
+    }
+    .value-card {
+      background: var(--clr-white);
+      border: 1px solid var(--clr-border);
+      border-radius: var(--radius-lg);
+      padding: var(--sp-8);
+    }
+    .value-card__icon {
+      width: 44px; height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--clr-accent-light);
+      border-radius: var(--radius);
+      color: var(--clr-accent);
+      margin-bottom: var(--sp-4);
+    }
+    .value-card__icon svg { width: 20px; height: 20px; }
+    .value-card h3 {
+      font-size: var(--fs-lg);
+      margin-bottom: var(--sp-2);
+    }
+    .value-card p {
+      font-size: var(--fs-sm);
+      color: var(--clr-text-muted);
+      line-height: var(--lh-relaxed);
+    }
+  </style>
+</head>
+<body>
+
+  <a href="#main" class="skip-link">Zum Inhalt springen</a>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="index.html" class="header__logo" aria-label="Leon Koch Webdesign – Startseite">
+        Leon Koch <span>Webdesign</span>
+      </a>
+
+      <input type="checkbox" id="nav-toggle" class="nav-toggle sr-only">
+      <label for="nav-toggle" class="nav-toggle-label" aria-label="Navigation öffnen oder schließen">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+
+      <nav class="nav" aria-label="Hauptnavigation">
+        <ul class="nav__list">
+          <li><a href="index.html"       class="nav__link">Start</a></li>
+          <li><a href="leistungen.html"  class="nav__link">Leistungen</a></li>
+          <li><a href="ueber-mich.html"  class="nav__link active">Über mich</a></li>
+          <li><a href="werdegang.html"   class="nav__link">Werdegang</a></li>
+          <li><a href="kontakt.html"     class="nav__link nav__link--cta">Projekt anfragen</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ===== PAGE HERO ===== -->
+    <section class="page-hero">
+      <div class="container">
+        <nav class="page-hero__breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Start</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">Über mich</span>
+        </nav>
+        <h1 class="page-hero__title">Über mich</h1>
+        <p class="page-hero__subtitle">
+          Webdesigner aus Böblingen – mit einem klaren Verständnis für Design, Technik und die
+          Bedürfnisse lokaler Unternehmen.
+        </p>
+      </div>
+    </section>
+
+
+    <!-- ===== PROFIL ===== -->
+    <section class="section" aria-label="Persönliche Vorstellung">
+      <div class="container">
+        <div class="profile-layout">
+
+          <div class="profile-image-wrap">
+            <div class="profile-image" role="img" aria-label="Portraitfoto Leon Koch – Platzhalter">
+              <div class="profile-image__placeholder">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                <span>Foto folgt</span>
+              </div>
+            </div>
+            <div class="profile-badge">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              Böblingen, BW
+            </div>
+          </div>
+
+          <div>
+            <span class="section-label">Leon Koch</span>
+            <h2 class="section-title" style="margin-bottom:var(--sp-6);">Webdesigner mit Leidenschaft für klare Struktur</h2>
+
+            <div class="prose">
+              <p>
+                Mein Einstieg ins Webdesign begann früh – bereits mit 14 Jahren beschäftigte ich mich
+                eigenständig mit der Gestaltung von Websites. Was als Neugier auf Baukastensysteme wie
+                Wix, Weebly und Shopify begann, entwickelte sich schnell zu einer ernsthaften Auseinandersetzung
+                mit dem Handwerk des Webdesigns.
+              </p>
+              <p>
+                Durch den Aufbau eigener Projekte und Online-Shops sammelte ich praxisnahe Erfahrungen
+                in Bereichen, die weit über reine Gestaltung hinausgehen: Nutzerführung, Conversion-Optimierung
+                und die Frage, was eine Website wirklich effektiv macht. Mit der Zeit entwickelte ich ein
+                klares Gespür dafür, was Besucher überzeugt – und was sie abschreckt.
+              </p>
+              <p>
+                Heute verbinde ich dieses gestalterische Verständnis mit dem analytischen Denken,
+                das mir mein duales Studium im Bereich Elektrotechnik vermittelt. Diese Kombination aus
+                strukturiertem Denken und gestalterischem Gespür ermöglicht es mir, Websites zu liefern,
+                die nicht nur gut aussehen, sondern auch klar durchdacht und zielorientiert sind.
+              </p>
+              <p>
+                Mein Ansatz ist klar: Ich erstelle keine Websites von der Stange. Jedes Projekt beginnt
+                mit dem Verständnis des Unternehmens, seiner Zielgruppe und seiner Ziele. Das Ergebnis ist
+                eine Website, die gezielt wirkt – professionell, übersichtlich und auf allen Geräten optimal.
+              </p>
+            </div>
+
+            <div style="margin-top:var(--sp-8); display:flex; gap:var(--sp-4); flex-wrap:wrap;">
+              <a href="kontakt.html" class="btn btn--primary">Projekt anfragen</a>
+              <a href="werdegang.html" class="btn btn--ghost">Werdegang ansehen</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ===== KENNTNISSE ===== -->
+    <section class="section section--alt" aria-label="Kenntnisse und Werkzeuge">
+      <div class="container">
+        <span class="section-label">Schwerpunkte</span>
+        <h2 class="section-title">Worauf es mir ankommt</h2>
+        <p class="section-subtitle">
+          Gute Websites entstehen nicht durch Technik allein – sondern durch das richtige Verständnis
+          für Design, Zielgruppe und Wirkung.
+        </p>
+
+        <div class="skills-grid">
+          <div class="skill-item">
+            <span class="skill-item__dot"></span>
+            <span class="skill-item__name">Visuelles Design & Gestaltung</span>
+          </div>
+          <div class="skill-item">
+            <span class="skill-item__dot"></span>
+            <span class="skill-item__name">Klare Seitenstruktur & Nutzerführung</span>
+          </div>
+          <div class="skill-item">
+            <span class="skill-item__dot"></span>
+            <span class="skill-item__name">Mobile & Desktop Optimierung</span>
+          </div>
+          <div class="skill-item">
+            <span class="skill-item__dot"></span>
+            <span class="skill-item__name">Grundlagen der Auffindbarkeit (SEO)</span>
+          </div>
+          <div class="skill-item">
+            <span class="skill-item__dot"></span>
+            <span class="skill-item__name">Typografie & Farbgestaltung</span>
+          </div>
+          <div class="skill-item">
+            <span class="skill-item__dot"></span>
+            <span class="skill-item__name">E-Commerce & Online-Präsenz</span>
+          </div>
+          <div class="skill-item">
+            <span class="skill-item__dot"></span>
+            <span class="skill-item__name">Konzeption & Projektplanung</span>
+          </div>
+          <div class="skill-item">
+            <span class="skill-item__dot"></span>
+            <span class="skill-item__name">Nutzererfahrung & Conversion</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ===== WERTE ===== -->
+    <section class="section" aria-label="Meine Arbeitsweise">
+      <div class="container">
+        <span class="section-label">Meine Arbeitsweise</span>
+        <h2 class="section-title">Wie ich an Projekte herangehe</h2>
+        <p class="section-subtitle">
+          Gute Websites entstehen nicht durch Zufall. Sie entstehen durch klares Denken,
+          strukturiertes Vorgehen und echtes Interesse am Projekt.
+        </p>
+
+        <div class="values-grid">
+
+          <div class="value-card">
+            <div class="value-card__icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+            </div>
+            <h3>Verstehen vor Umsetzen</h3>
+            <p>Bevor ich einen einzigen Code-Zeile schreibe, verstehe ich das Unternehmen, die Zielgruppe und das Ziel der Website.</p>
+          </div>
+
+          <div class="value-card">
+            <div class="value-card__icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+            </div>
+            <h3>Klare Struktur</h3>
+            <p>Gutes Design beginnt mit klarer Struktur. Ich sorge dafür, dass Besucher intuitiv durch Ihre Website geführt werden.</p>
+          </div>
+
+          <div class="value-card">
+            <div class="value-card__icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+            </div>
+            <h3>Transparente Zusammenarbeit</h3>
+            <p>Regelmäßige Updates und ein offener Austausch gehören für mich selbstverständlich zur Zusammenarbeit dazu.</p>
+          </div>
+
+          <div class="value-card">
+            <div class="value-card__icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+            </div>
+            <h3>Qualität vor Quantität</h3>
+            <p>Ich nehme mir die Zeit, die jedes Projekt braucht – anstatt viele Projekte halbherzig abzuarbeiten.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ===== CTA ===== -->
+    <section class="cta-section" aria-label="Kontakt aufnehmen">
+      <div class="container cta-section__inner">
+        <h2>Lassen Sie uns zusammenarbeiten</h2>
+        <p>Ich freue mich auf Ihr Projekt und ein erstes unverbindliches Gespräch.</p>
+        <a href="kontakt.html" class="btn btn--white btn--lg">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+          Jetzt Kontakt aufnehmen
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" aria-label="Seitenfu&szlig;">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <h3>Leon Koch <span>Webdesign</span></h3>
+          <p>Professionelle Websites für lokale Unternehmen. Aus Böblingen, für die Region.</p>
+        </div>
+        <div>
+          <p class="footer__col-title">Navigation</p>
+          <ul class="footer__links">
+            <li><a href="index.html"      class="footer__link">Startseite</a></li>
+            <li><a href="leistungen.html" class="footer__link">Leistungen</a></li>
+            <li><a href="ueber-mich.html" class="footer__link">Über mich</a></li>
+            <li><a href="werdegang.html"  class="footer__link">Werdegang</a></li>
+            <li><a href="kontakt.html"    class="footer__link">Kontakt</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__col-title">Kontakt</p>
+          <ul class="footer__links">
+            <li><a href="mailto:kontakt@leonkoch.de" class="footer__link">kontakt@leonkoch.de</a></li>
+            <li><a href="tel:+4915123456789"         class="footer__link">0151 23456789</a></li>
+            <li><span class="footer__link">Böblingen, Baden-Württemberg</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">&copy; 2025 Leon Koch Webdesign. Alle Rechte vorbehalten.</p>
+        <nav class="footer__legal" aria-label="Rechtliches">
+          <a href="#">Impressum</a>
+          <a href="#">Datenschutz</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
