@@ -1178,23 +1178,77 @@ body::before {
   .stats-bar .reveal.visible .stat__number { animation: none; }
 }
 
-/* ---------- Improved primary button ---------- */
-.btn--primary {
-  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+/* ---------- Button glow on hover (alle Varianten) ---------- */
+.btn {
   position: relative;
   overflow: hidden;
+  transition:
+    background   240ms ease,
+    color        240ms ease,
+    border-color 240ms ease,
+    box-shadow   300ms ease,
+    transform    180ms ease;
 }
-.btn--primary::after {
+
+/* Shimmer-Schicht */
+.btn::after {
   content: '';
   position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(255,255,255,.12) 0%, transparent 50%);
+  top: -50%; left: -75%;
+  width: 50%; height: 200%;
+  background: linear-gradient(
+    105deg,
+    transparent 30%,
+    rgba(255,255,255,.35) 50%,
+    transparent 70%
+  );
+  transform: skewX(-15deg);
   opacity: 0;
-  transition: opacity 200ms ease;
+  transition: opacity 200ms ease, left 420ms ease;
+  pointer-events: none;
 }
-.btn--primary:hover::after { opacity: 1; }
+.btn:hover::after {
+  left: 125%;
+  opacity: 1;
+}
+
+/* Primär */
+.btn--primary {
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+}
 .btn--primary:hover {
   background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+  box-shadow: 0 6px 24px rgba(37,99,235,.40), 0 2px 8px rgba(37,99,235,.20);
+}
+
+/* Outline */
+.btn--outline:hover {
+  background: var(--clr-accent-light);
+  box-shadow: 0 4px 16px rgba(37,99,235,.18);
+}
+
+/* Ghost */
+.btn--ghost:hover {
+  background: var(--clr-bg);
+  border-color: var(--clr-text-light);
+  color: var(--clr-text);
+  box-shadow: 0 4px 12px rgba(15,23,42,.08);
+}
+
+/* Weiß (CTA-Bereich) */
+.btn--white:hover {
+  background: var(--clr-bg);
+  box-shadow: 0 6px 24px rgba(255,255,255,.25), 0 2px 8px rgba(255,255,255,.15);
+}
+
+/* Shimmer im weißen Button etwas dunkler */
+.btn--white::after {
+  background: linear-gradient(
+    105deg,
+    transparent 30%,
+    rgba(37,99,235,.12) 50%,
+    transparent 70%
+  );
 }
 
 /* ---------- Responsive ---------- */
