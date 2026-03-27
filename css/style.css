@@ -1049,12 +1049,13 @@ body::before {
   background: var(--clr-white);
   overflow: hidden;
 }
-/* Main gradient wash */
+/* Main gradient wash + bottom fade (behind all content) */
 .hero::before {
   content: '';
   position: absolute;
   inset: 0;
   background:
+    linear-gradient(to bottom, transparent 70%, var(--clr-white) 100%),
     radial-gradient(ellipse 90% 80% at 95% 5%, rgba(37,99,235,.13) 0%, transparent 55%),
     radial-gradient(ellipse 70% 60% at 0% 100%, rgba(99,102,241,.09) 0%, transparent 50%);
   pointer-events: none;
@@ -1088,16 +1089,6 @@ body::before {
 .hero__orb--2 {
   display: none;
 }
-/* Bottom fade to white for smooth section transition */
-.hero__fade {
-  position: absolute;
-  left: 0; right: 0; bottom: 0;
-  height: 220px;
-  background: linear-gradient(to bottom, transparent 0%, var(--clr-white) 85%);
-  pointer-events: none;
-  z-index: 0;
-}
-
 /* Decorative ring behind browser mockup */
 .hero__visual-ring {
   position: absolute;
