@@ -314,26 +314,6 @@ p { color: var(--clr-text-muted); line-height: var(--lh-relaxed); }
     radial-gradient(ellipse 60% 50% at 5% 90%, rgba(99,102,241,.14) 0%, transparent 50%),
     linear-gradient(160deg, #081529 0%, #0a1a35 40%, #070f22 100%);
 }
-/* Top/bottom ease-fade into surrounding sections */
-.section--alt::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom,
-    #060d1e                  0px,
-    rgba(6,13,30,.80)       20px,
-    rgba(6,13,30,.50)       50px,
-    rgba(6,13,30,.18)       90px,
-    transparent             140px,
-    transparent             calc(100% - 140px),
-    rgba(6,13,30,.18)       calc(100% - 90px),
-    rgba(6,13,30,.50)       calc(100% - 50px),
-    rgba(6,13,30,.80)       calc(100% - 20px),
-    #060d1e                 100%
-  );
-  pointer-events: none;
-  z-index: 1;
-}
 .section--alt > .container { position: relative; z-index: 2; }
 .section--accent {
   background: var(--clr-accent);
@@ -952,15 +932,7 @@ textarea.form-control {
 .page-hero {
   padding-block: var(--sp-16) var(--sp-12);
   border-bottom: 1px solid var(--clr-border);
-  background:
-    linear-gradient(to bottom,
-      transparent             calc(100% - 140px),
-      rgba(6,13,30,.18)       calc(100% - 90px),
-      rgba(6,13,30,.50)       calc(100% - 50px),
-      rgba(6,13,30,.80)       calc(100% - 20px),
-      #060d1e                 100%
-    ),
-    linear-gradient(135deg, #0e1d40 0%, #090e20 55%);
+  background: linear-gradient(135deg, #0e1d40 0%, #090e20 55%);
   border-bottom: none;
   position: relative;
   overflow: hidden;
@@ -1266,15 +1238,7 @@ body::before {
   content: '';
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(to bottom,
-      #060d1e                  0px,
-      rgba(6,13,30,.80)       20px,
-      rgba(6,13,30,.50)       50px,
-      rgba(6,13,30,.18)       90px,
-      transparent             140px
-    ),
-    url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
   pointer-events: none;
 }
 /* Glow orbs in CTA */
@@ -1585,24 +1549,12 @@ body::before {
   position: relative;
   overflow: hidden;
 }
-/* Mesh glow + top/bottom ease-fade into surrounding sections */
+/* Mesh glow */
 .section--dark::before {
   content: '';
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(to bottom,
-      #060d1e                  0px,
-      rgba(6,13,30,.80)       20px,
-      rgba(6,13,30,.50)       50px,
-      rgba(6,13,30,.18)       90px,
-      transparent             140px,
-      transparent             calc(100% - 140px),
-      rgba(6,13,30,.18)       calc(100% - 90px),
-      rgba(6,13,30,.50)       calc(100% - 50px),
-      rgba(6,13,30,.80)       calc(100% - 20px),
-      #060d1e                 100%
-    ),
     radial-gradient(ellipse 75% 65% at 90% 50%, rgba(37,99,235,.22) 0%, transparent 55%),
     radial-gradient(ellipse 55% 45% at 5% 50%, rgba(99,102,241,.12) 0%, transparent 50%);
   pointer-events: none;
