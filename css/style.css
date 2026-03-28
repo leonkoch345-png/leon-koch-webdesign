@@ -1220,7 +1220,7 @@ textarea.form-control {
 
 /* ---------- CTA section gradient ---------- */
 .cta-section {
-  background: linear-gradient(135deg, #020818 0%, #0f2460 35%, #1d4ed8 70%, #2563eb 100%);
+  background: linear-gradient(135deg, #0a1a40 0%, #0f2460 35%, #1d4ed8 70%, #2563eb 100%);
 }
 .cta-section::before {
   content: '';
