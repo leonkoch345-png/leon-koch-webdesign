@@ -309,10 +309,7 @@ p { color: var(--clr-text-muted); line-height: var(--lh-relaxed); }
 .section--alt {
   position: relative;
   overflow: hidden;
-  background:
-    radial-gradient(ellipse 70% 60% at 95% 10%, rgba(37,99,235,.22) 0%, transparent 55%),
-    radial-gradient(ellipse 60% 50% at 5% 90%, rgba(99,102,241,.14) 0%, transparent 50%),
-    linear-gradient(160deg, #081529 0%, #0a1a35 40%, #070f22 100%);
+  background: #081529;
 }
 .section--alt > .container { position: relative; z-index: 2; }
 .section--accent {
@@ -932,7 +929,7 @@ textarea.form-control {
 .page-hero {
   padding-block: var(--sp-16) var(--sp-12);
   border-bottom: 1px solid var(--clr-border);
-  background: linear-gradient(135deg, #0e1d40 0%, #090e20 55%);
+  background: #0e1d40;
   border-bottom: none;
   position: relative;
   overflow: hidden;
@@ -1068,15 +1065,6 @@ textarea.form-control {
    VISUAL ENHANCEMENTS
    ============================================================ */
 
-/* ---------- Top accent bar ---------- */
-body::before {
-  content: '';
-  display: block;
-  height: 4px;
-  background: linear-gradient(90deg, #1d4ed8 0%, #6366f1 40%, #06b6d4 80%, #3b82f6 100%);
-  background-size: 200% auto;
-  animation: gradient-flow 6s linear infinite;
-}
 
 /* ---------- Header scrolled state ---------- */
 .header--scrolled {
@@ -1536,28 +1524,16 @@ body::before {
    SECTION: KURZVORSTELLUNG — subtle gradient wash
    ============================================================ */
 .section:not(.section--alt):not(.section--dark) {
-  background:
-    radial-gradient(ellipse 50% 80% at 5% 50%, rgba(37,99,235,.10) 0%, transparent 60%),
-    var(--clr-bg);
+  background: var(--clr-bg);
 }
 
 /* ============================================================
    SECTION--DARK (used on "Warum ich" section)
    ============================================================ */
 .section--dark {
-  background: linear-gradient(135deg, #060d1e 0%, #0d1a3d 100%);
+  background: #0a1530;
   position: relative;
   overflow: hidden;
-}
-/* Mesh glow */
-.section--dark::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(ellipse 75% 65% at 90% 50%, rgba(37,99,235,.22) 0%, transparent 55%),
-    radial-gradient(ellipse 55% 45% at 5% 50%, rgba(99,102,241,.12) 0%, transparent 50%);
-  pointer-events: none;
 }
 /* Dot grid */
 .section--dark::after {
