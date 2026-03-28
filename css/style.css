@@ -307,7 +307,10 @@ p { color: var(--clr-text-muted); line-height: var(--lh-relaxed); }
   padding-block: var(--sp-24);
 }
 .section--alt {
-  background: var(--clr-bg-section);
+  background:
+    radial-gradient(ellipse 70% 60% at 95% 10%, rgba(37,99,235,.08) 0%, transparent 55%),
+    radial-gradient(ellipse 60% 50% at 5% 90%, rgba(99,102,241,.06) 0%, transparent 50%),
+    linear-gradient(160deg, #eef4ff 0%, #f0f4fb 40%, #edf2ff 100%);
 }
 .section--accent {
   background: var(--clr-accent);
@@ -558,13 +561,14 @@ p { color: var(--clr-text-muted); line-height: var(--lh-relaxed); }
 .feature-item__check {
   width: 22px; height: 22px;
   flex-shrink: 0;
-  background: var(--clr-accent-light);
-  color: var(--clr-accent);
+  background: linear-gradient(135deg, var(--clr-accent), #6366f1);
+  color: var(--clr-white);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-top: 2px;
+  flex-shrink: 0;
 }
 .feature-item__check svg { width: 12px; height: 12px; }
 .feature-item__text {
@@ -672,7 +676,7 @@ p { color: var(--clr-text-muted); line-height: var(--lh-relaxed); }
   top: 8px;
   bottom: 0;
   width: 2px;
-  background: var(--clr-border);
+  background: linear-gradient(to bottom, var(--clr-accent), #6366f1 60%, var(--clr-border));
 }
 .timeline__item {
   position: relative;
@@ -690,8 +694,8 @@ p { color: var(--clr-text-muted); line-height: var(--lh-relaxed); }
   border-radius: 50%;
 }
 .timeline__item--active::before {
-  background: var(--clr-accent);
-  box-shadow: 0 0 0 4px var(--clr-accent-light);
+  background: linear-gradient(135deg, var(--clr-accent), #6366f1);
+  box-shadow: 0 0 0 4px rgba(37,99,235,.12), 0 0 14px rgba(37,99,235,.35);
 }
 .timeline__period {
   font-size: var(--fs-sm);
@@ -1494,6 +1498,116 @@ body::before {
   .hero__actions { flex-direction: column; }
   .hero__actions .btn { width: 100%; justify-content: center; }
 }
+
+/* ============================================================
+   CARD GRADIENT TOP SHIMMER
+   ============================================================ */
+.card {
+  position: relative;
+  overflow: hidden;
+}
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 16px; right: 16px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(37,99,235,.55) 30%,
+    rgba(139,92,246,.55) 70%,
+    transparent 100%
+  );
+  opacity: 0;
+  transition: opacity 320ms ease;
+}
+.card:hover::before { opacity: 1; }
+
+/* Gradient icon boxes on cards */
+.card__icon {
+  background: linear-gradient(135deg, var(--clr-accent-light) 0%, #e0e7ff 100%);
+}
+
+/* ============================================================
+   SECTION: KURZVORSTELLUNG — subtle gradient wash
+   ============================================================ */
+.section:not(.section--alt):not(.section--dark) {
+  background:
+    radial-gradient(ellipse 50% 80% at 5% 50%, rgba(37,99,235,.04) 0%, transparent 60%),
+    var(--clr-white);
+}
+
+/* ============================================================
+   SECTION--DARK (used on "Warum ich" section)
+   ============================================================ */
+.section--dark {
+  background: linear-gradient(135deg, #060d1e 0%, #0d1a3d 100%);
+  position: relative;
+  overflow: hidden;
+}
+/* Mesh glow */
+.section--dark::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 75% 65% at 90% 50%, rgba(37,99,235,.22) 0%, transparent 55%),
+    radial-gradient(ellipse 55% 45% at 5% 50%, rgba(99,102,241,.12) 0%, transparent 50%);
+  pointer-events: none;
+}
+/* Dot grid */
+.section--dark::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(255,255,255,.04) 1px, transparent 1px);
+  background-size: 32px 32px;
+  pointer-events: none;
+}
+/* Labels + headings */
+.section--dark .section-label {
+  color: #7dd3fc;
+}
+.section--dark .section-label::before {
+  background: linear-gradient(90deg, #60a5fa, #a78bfa);
+}
+.section--dark h2,
+.section--dark .section-title { color: #f1f5f9; }
+.section--dark .section-title::after {
+  background: linear-gradient(90deg, #60a5fa, #a78bfa);
+}
+.section--dark .section-subtitle { color: rgba(241,245,249,.55); }
+/* Glassmorphism cards */
+.section--dark .card {
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.08);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+.section--dark .card:hover {
+  background: rgba(255,255,255,.09);
+  border-color: rgba(59,130,246,.4);
+  box-shadow: 0 24px 60px rgba(0,0,0,.4), 0 0 0 1px rgba(59,130,246,.15);
+  transform: translateY(-4px);
+}
+.section--dark .card__title { color: #f1f5f9; }
+.section--dark .card__text  { color: rgba(241,245,249,.62); }
+.section--dark .card__icon {
+  background: rgba(59,130,246,.15);
+  color: #60a5fa;
+}
+/* Gradient shimmer on dark cards */
+.section--dark .card::before {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(96,165,250,.6) 30%,
+    rgba(167,139,250,.6) 70%,
+    transparent 100%
+  );
+}
+/* Ensure stacking context for dot-grid not covering cards */
+.section--dark > .container { position: relative; z-index: 1; }
 
 /* ============================================================
    DARK HERO VARIANT
