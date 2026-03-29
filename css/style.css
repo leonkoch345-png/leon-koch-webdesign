@@ -1285,11 +1285,11 @@ textarea.form-control {
   position: relative;
   overflow: hidden;
   transition:
-    background   240ms ease,
-    color        240ms ease,
-    border-color 240ms ease,
-    box-shadow   300ms ease,
-    transform    180ms ease;
+    background   150ms ease,
+    color        150ms ease,
+    border-color 150ms ease,
+    box-shadow   150ms ease,
+    transform    150ms ease;
 }
 
 /* Shimmer-Schicht */
@@ -1306,7 +1306,7 @@ textarea.form-control {
   );
   transform: skewX(-15deg);
   opacity: 0;
-  transition: opacity 200ms ease, left 420ms ease;
+  transition: opacity 150ms ease, left 260ms ease;
   pointer-events: none;
 }
 .btn:hover::after {

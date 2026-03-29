@@ -60,6 +60,12 @@
       border: 1px solid rgba(255,255,255,.08);
       border-radius: var(--radius-lg);
       padding: var(--sp-8);
+      transition: box-shadow var(--tr), border-color var(--tr), transform var(--tr);
+    }
+    .value-card:hover {
+      box-shadow: var(--shadow-md);
+      border-color: var(--clr-accent-border);
+      transform: translateY(-2px);
     }
     .value-card__icon {
       width: 44px; height: 44px;
