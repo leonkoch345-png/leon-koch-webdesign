@@ -1464,6 +1464,7 @@ textarea.form-control {
   .card-grid--2 { grid-template-columns: 1fr; }
   .card-grid--4 { grid-template-columns: 1fr 1fr; }
   .stats-bar { display: none; }
+  .kurzvorstellung-grid { grid-template-columns: 1fr !important; }
 
   .stats-bar {
     grid-template-columns: 1fr 1fr;
