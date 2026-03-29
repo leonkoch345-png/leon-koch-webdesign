@@ -16,7 +16,7 @@
   <meta property="og:locale" content="de_DE">
   <meta property="og:site_name" content="Leon Koch Webdesign">
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"ContactPage","name":"Kontakt – Leon Koch Webdesign","url":"https://kochleon.de/kontakt.html","description":"Kontaktseite von Leon Koch Webdesign, Böblingen","mainEntity":{"@type":"LocalBusiness","@id":"https://kochleon.de/#business","name":"Leon Koch Webdesign","telephone":"+491628597376","email":"kontakt@leonkoch.de"}}
+  {"@context":"https://schema.org","@type":"ContactPage","name":"Kontakt – Leon Koch Webdesign","url":"https://kochleon.de/kontakt.html","description":"Kontaktseite von Leon Koch Webdesign, Böblingen","mainEntity":{"@type":"LocalBusiness","@id":"https://kochleon.de/#business","name":"Leon Koch Webdesign","telephone":"+491628597376","email":"kontakt@kochleon.de"}}
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -196,7 +196,7 @@
                 </div>
                 <div>
                   <p class="contact-info__label">E-Mail</p>
-                  <a href="mailto:kontakt@leonkoch.de" class="contact-info__value">kontakt@leonkoch.de</a>
+                  <a href="mailto:kontakt@kochleon.de" class="contact-info__value">kontakt@kochleon.de</a>
                 </div>
               </div>
 
@@ -257,7 +257,23 @@
             </div>
 
             <div class="form-card">
-              <form action="#" method="POST" novalidate aria-label="Kontaktformular">
+              <!-- Erfolgsmeldung (wird per JS eingeblendet) -->
+              <div id="form-success" style="display:none; padding:var(--sp-8); text-align:center;">
+                <div style="width:56px;height:56px;background:rgba(34,197,94,.12);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto var(--sp-4);">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <h3 style="color:var(--clr-text);margin-bottom:var(--sp-2);">Nachricht gesendet!</h3>
+                <p style="color:var(--clr-text-muted);">Vielen Dank für Ihre Anfrage. Ich melde mich so zeitnah wie möglich zurück.</p>
+              </div>
+
+              <!-- Fehlermeldung (wird per JS eingeblendet) -->
+              <div id="form-error" style="display:none; padding:var(--sp-4); background:rgba(239,68,68,.08); border:1px solid rgba(239,68,68,.25); border-radius:var(--radius); margin-bottom:var(--sp-5);">
+                <p style="color:#f87171; font-size:var(--fs-sm);">Beim Senden ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut oder schreiben Sie direkt an <a href="mailto:kontakt@kochleon.de" style="color:#f87171;text-decoration:underline;">kontakt@kochleon.de</a>.</p>
+              </div>
+
+              <form id="contact-form" action="https://formspree.io/f/DEINE_FORM_ID" method="POST" novalidate aria-label="Kontaktformular">
+                <!-- Formspree: Antwort-Adresse = E-Mail des Absenders -->
+                <input type="hidden" name="_replyto" id="replyto-hidden">
 
                 <div class="form-group">
                   <label for="name">
@@ -309,11 +325,11 @@
                   </label>
                   <select id="subject" name="subject" class="form-control" required aria-required="true">
                     <option value="" disabled selected>Bitte auswählen ...</option>
-                    <option value="neue-website">Neue Website erstellen</option>
-                    <option value="redesign">Bestehende Website modernisieren</option>
-                    <option value="mobile">Mobile Optimierung</option>
-                    <option value="seo">Suchmaschinenoptimierung</option>
-                    <option value="sonstiges">Sonstiges</option>
+                    <option value="Neue Website erstellen">Neue Website erstellen</option>
+                    <option value="Bestehende Website modernisieren">Bestehende Website modernisieren</option>
+                    <option value="Mobile Optimierung">Mobile Optimierung</option>
+                    <option value="Suchmaschinenoptimierung">Suchmaschinenoptimierung</option>
+                    <option value="Sonstiges">Sonstiges</option>
                   </select>
                 </div>
 
@@ -342,13 +358,13 @@
                     style="width:18px; height:18px; margin-top:2px; accent-color:var(--clr-accent); flex-shrink:0; cursor:pointer;"
                   >
                   <label for="privacy" style="font-size:var(--fs-sm); color:var(--clr-text-muted); cursor:pointer; line-height:var(--lh-relaxed);">
-                    Ich habe die <a href="#" style="color:var(--clr-accent);">Datenschutzerklärung</a> gelesen
+                    Ich habe die <a href="datenschutz.html" style="color:var(--clr-accent);">Datenschutzerklärung</a> gelesen
                     und stimme der Verarbeitung meiner Daten zur Bearbeitung meiner Anfrage zu. <span class="required" aria-hidden="true">*</span>
                   </label>
                 </div>
 
                 <div class="form-submit-area">
-                  <button type="submit" class="btn btn--primary btn--lg">
+                  <button type="submit" id="submit-btn" class="btn btn--primary btn--lg">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
                     Anfrage absenden
                   </button>
@@ -360,6 +376,58 @@
 
               </form>
             </div>
+
+            <script>
+              (function() {
+                var form = document.getElementById('contact-form');
+                var successEl = document.getElementById('form-success');
+                var errorEl = document.getElementById('form-error');
+                var submitBtn = document.getElementById('submit-btn');
+                var emailInput = document.getElementById('email');
+                var replytoHidden = document.getElementById('replyto-hidden');
+
+                // Sync _replyto with email field
+                emailInput.addEventListener('input', function() {
+                  replytoHidden.value = emailInput.value;
+                });
+
+                form.addEventListener('submit', function(e) {
+                  e.preventDefault();
+                  errorEl.style.display = 'none';
+
+                  // HTML5 validation
+                  if (!form.checkValidity()) {
+                    form.reportValidity();
+                    return;
+                  }
+
+                  replytoHidden.value = emailInput.value;
+                  submitBtn.disabled = true;
+                  submitBtn.textContent = 'Wird gesendet…';
+
+                  var data = new FormData(form);
+
+                  fetch(form.action, {
+                    method: 'POST',
+                    body: data,
+                    headers: { 'Accept': 'application/json' }
+                  })
+                  .then(function(response) {
+                    if (response.ok) {
+                      form.style.display = 'none';
+                      successEl.style.display = 'block';
+                    } else {
+                      return response.json().then(function(d) { throw d; });
+                    }
+                  })
+                  .catch(function() {
+                    errorEl.style.display = 'block';
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg> Anfrage absenden';
+                  });
+                });
+              })();
+            </script>
           </div>
 
         </div>
@@ -466,7 +534,7 @@
         <div>
           <p class="footer__col-title">Kontakt</p>
           <ul class="footer__links">
-            <li><a href="mailto:kontakt@leonkoch.de" class="footer__link">kontakt@leonkoch.de</a></li>
+            <li><a href="mailto:kontakt@kochleon.de" class="footer__link">kontakt@kochleon.de</a></li>
             <li><a href="tel:+491628597376"         class="footer__link">0162 8597376</a></li>
             <li><span class="footer__link">Böblingen, Baden-Württemberg</span></li>
           </ul>
