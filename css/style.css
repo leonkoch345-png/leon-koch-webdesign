@@ -1058,6 +1058,40 @@ textarea.form-control {
 }
 .skip-link:focus { top: var(--sp-4); }
 
+/* ---------- WhatsApp FAB ---------- */
+@keyframes whatsapp-pulse {
+  0%, 100% { box-shadow: 0 4px 20px rgba(37,211,102,.45), 0 0 0 0 rgba(37,211,102,.35); }
+  60%       { box-shadow: 0 4px 20px rgba(37,211,102,.45), 0 0 0 12px rgba(37,211,102,0); }
+}
+.whatsapp-fab {
+  position: fixed;
+  bottom: 1.75rem;
+  right: 1.75rem;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #25D366;
+  color: #fff;
+  padding: 0.8rem 1.25rem 0.8rem 1rem;
+  border-radius: var(--radius-full);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  text-decoration: none;
+  animation: whatsapp-pulse 2.8s ease-in-out infinite;
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+.whatsapp-fab:hover {
+  transform: translateY(-3px) scale(1.04);
+  box-shadow: 0 8px 32px rgba(37,211,102,.55);
+  animation: none;
+}
+.whatsapp-fab svg { width: 22px; height: 22px; flex-shrink: 0; }
+@media (max-width: 768px) {
+  .whatsapp-fab { padding: 0.9rem; bottom: 1.25rem; right: 1.25rem; }
+  .whatsapp-fab__label { display: none; }
+}
+
 /* ---------- Utilities ---------- */
 .text-center  { text-align: center; }
 .text-accent  { color: var(--clr-accent); }
@@ -1418,7 +1452,7 @@ textarea.form-control {
   /* ── Typography ── */
   .section-subtitle { font-size: var(--fs-base); margin-bottom: var(--sp-8); }
   .hero__subtitle { font-size: var(--fs-base); }
-  .hero__title { line-height: 1.1; letter-spacing: -0.04em; }
+  .hero__title { font-size: clamp(2.5rem, 11vw, 3rem); line-height: 1.05; letter-spacing: -0.04em; }
 
   /* ── Mobile Nav ── */
   .nav-toggle-label { display: flex; z-index: 110; }
