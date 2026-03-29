@@ -85,7 +85,7 @@
 
 /* ---------- Reset ---------- */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; font-size: 16px; overflow-x: hidden; }
+html { scroll-behavior: smooth; font-size: 16px; overflow-x: hidden; max-width: 100%; }
 body {
   font-family: var(--font);
   font-size: var(--fs-base);
@@ -93,6 +93,7 @@ body {
   color: var(--clr-text);
   background: var(--clr-bg);
   overflow-x: hidden;
+  max-width: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -1460,7 +1461,9 @@ textarea.form-control {
   }
 
   .card-grid { grid-template-columns: 1fr; }
+  .card-grid--2 { grid-template-columns: 1fr; }
   .card-grid--4 { grid-template-columns: 1fr 1fr; }
+  .stats-bar { display: none; }
 
   .stats-bar {
     grid-template-columns: 1fr 1fr;
