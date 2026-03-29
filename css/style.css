@@ -85,14 +85,14 @@
 
 /* ---------- Reset ---------- */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; font-size: 16px; overflow-x: hidden; max-width: 100%; }
+html { scroll-behavior: smooth; font-size: 16px; overflow-x: clip; max-width: 100%; }
 body {
   font-family: var(--font);
   font-size: var(--fs-base);
   line-height: var(--lh-relaxed);
   color: var(--clr-text);
   background: var(--clr-bg);
-  overflow-x: hidden;
+  overflow-x: clip;
   max-width: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
