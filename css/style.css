@@ -85,13 +85,14 @@
 
 /* ---------- Reset ---------- */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; font-size: 16px; }
+html { scroll-behavior: smooth; font-size: 16px; overflow-x: hidden; }
 body {
   font-family: var(--font);
   font-size: var(--fs-base);
   line-height: var(--lh-relaxed);
   color: var(--clr-text);
   background: var(--clr-bg);
+  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -1463,8 +1464,8 @@ textarea.form-control {
 
   .stats-bar {
     grid-template-columns: 1fr 1fr;
-    padding: var(--sp-8);
-    gap: var(--sp-5);
+    padding: var(--sp-6) var(--sp-4);
+    gap: var(--sp-4);
   }
 
   .feature-list { grid-template-columns: 1fr; }

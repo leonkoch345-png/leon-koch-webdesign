@@ -4,4 +4,4 @@ Allow: /
 Disallow: /impressum.html
 Disallow: /datenschutz.html
 
-Sitemap: https://leonkoch-webdesign.de/sitemap.xml
+Sitemap: https://kochleon.de/sitemap.xml
